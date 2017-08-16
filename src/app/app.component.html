@@ -1,0 +1,30 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Client's policies {{title}}
+  </h1>
+ 
+</div>
+
+<table class="table">
+    <tr>
+        <th>#</th>
+        <th>Policy Number</th>
+        <th>Amount Insured</th>
+        <th>Email</th>
+        <th>Inception Date</th>
+        <th>Installment Payment</th>
+        <th>Client Id</th>
+        
+    </tr>
+    <tr *ngFor="let p of policies.policies ; let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{p.id}}</td>
+        <td>{{p.amountInsured}}</td>
+        <td>{{p.email}}</td>
+        <td>{{p.inceptionDate}}</td>
+        <td *ngIf="p.installmentPayment">Yes</td>
+        <td *ngIf="!p.installmentPayment">No</td>
+        <td>{{p.clientId}}</td>
+    </tr>
+</table>
